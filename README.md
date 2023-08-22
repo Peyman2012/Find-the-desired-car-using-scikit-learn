@@ -6,3 +6,8 @@ Find the desired car using scikit-learn
 We cannot use classification in this project because the classifier generally separates distinct classes, and so this classifier expects a string or an integer type to distinguish different classes from each other (this is called the "target " Is known). You can read more about this in Introduction to Classifiers.
 
 The problem we are trying to solve is to determine a continuous numerical output, Result. This is known as a regression problem, so we need to use a regression algorithm (such as DecisionTreeRegressor).
+      clf = tree.DecisionTreeRegressor()
+      clf = clf.fit(x, y)
+      new_data = [[search_name, search_color_ex, search_color_in, search_person, m_input, y_input, a_input, o_input]]
+      new_data_1.append(new_data)
+      answer = clf.predict(new_data)
