@@ -1,7 +1,10 @@
 # Find-the-desired-car-using-scikit-learn
-Find the desired car using scikit-learn
+
 
 ![1200px-Scikit_learn_logo_small svg](https://github.com/Peyman2012/Find-the-desired-car-using-scikit-learn/assets/88220773/46c62a18-07d1-4bed-b41e-930351520d35)
+
+
+**Find the desired car using scikit-learn**
 
 We cannot use classification in this project because the classifier generally separates distinct classes, and so this classifier expects a string or an integer type to distinguish different classes from each other (this is called the "target " Is known). You can read more about this in Introduction to Classifiers.
 
@@ -12,3 +15,18 @@ The problem we are trying to solve is to determine a continuous numerical output
       new_data = [[search_name, search_color_ex, search_color_in, search_person, m_input, y_input, a_input, o_input]]
       new_data_1.append(new_data)
       answer = clf.predict(new_data)
+
+This code is encoded to search the input and find the value from the column:
+
+     search_name = df.loc[df['Name Car'] == n_input, 'NameCar_label'][0]
+     search_color_ex = df.loc[df['Color Exterior'] == c_ex_input, 'ColorCarEx_label'][0]
+     search_color_in = df.loc[df['Color Interior'] == c_in_input, 'ColorCarEx_label'][0]
+     search_person = df.loc[df['Person Car'] == p_input, 'Person_label'][0]
+
+Encoding the code means that it works with numbers in scikit-learn, and the strings must be converted into code, which will be done using the following library:
+
+      from sklearn import preprocessing
+      le = preprocessing.LabelEncoder()
+      le.fit(Name_car)
+      df['NameCar_label'] = le.transform(Name_car)
+      Name_label=df['NameCar_label']
