@@ -30,3 +30,8 @@ Encoding the code means that it works with numbers in scikit-learn, and the stri
       le.fit(Name_car)
       df['NameCar_label'] = le.transform(Name_car)
       Name_label=df['NameCar_label']
+      
+This code gives the number of answers requested:
+
+      for i in range(len(new_data_1)):
+          print(f'Car: {name[i]} ==> Price : {ans[i][0]}')
