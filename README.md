@@ -38,3 +38,7 @@ This code gives the number of answers requested:
 
       for i in range(len(new_data_1)):
           print(f'Car: {name[i]} ==> Price : {ans[i][0]}')
+
+Link to the dataset I collected in Keggle:
+
+https://www.kaggle.com/datasets/peimandaii/buy-car
