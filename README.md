@@ -24,6 +24,15 @@ Encoding the code means that it works with numbers in scikit-learn, and the stri
       le.fit(Name_car)
       df['NameCar_label'] = le.transform(Name_car)
       Name_label=df['NameCar_label']
+
+To search for a value in the columns of the data set, we use the following code:
+
+      df_price = df[df['Price Car'] ==answer[i]]
+        search_price=df_price['Name Car'].tolist()
+        search_color_ex=df_price['Color Exterior'].tolist()
+        search_color_in = df_price['Color Interior'].tolist()
+        search_model=df_price['Model Car'].tolist()
+        search_person=df_price['Person Car'].tolist()
       
 This code gives the number of answers requested:
 
