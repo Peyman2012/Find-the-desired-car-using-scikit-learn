@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn import tree
-from sklearn import preprocessing
+
 df=pd.read_csv('C:\\Users\\peyman\\pythonProject16\\Write_price_car_from_database_for.csv')
 # print(df.head())
 
@@ -15,31 +15,9 @@ Color_Interior=df['Color Interior']
 Person_Car=df['Person Car']
 Model_Car = ['Model Car']
 
-le = preprocessing.LabelEncoder()
-le.fit(Name_car)
-df['NameCar_label'] = le.transform(Name_car)
-Name_label=df['NameCar_label']
-
-le.fit(Color_Exterior)
-df['ColorCarEx_label'] = le.transform(Color_Exterior)
-ColorEX_label=df['ColorCarEx_label']
-
-le.fit(Color_Interior)
-df['ColorCarEx_label'] = le.transform(Color_Interior)
-ColorIN_label=df['ColorCarEx_label']
-
-le.fit(Person_Car)
-df['Person_label'] = le.transform(Person_Car)
-Person_label=df['Person_label']
-
-model_labal=[]
-
-
-
 x=[]
 y=[]
 
-# print(ColorIN_label)
 for i in range(len(df)):
     x.append([Miles_Car[i],Year_Car[i],Accident_Car[i],Owner_Car[i]])
     y.append([Price_Car[i]])
@@ -65,21 +43,28 @@ Number of accidents: {a_input}
 Number of owners: {o_input} person
 Min Price {min_price} and Max Price: {max_price}''')
 print()
-for i in range(len(new_data)):
-    print("Result : ")
-    if answer[i]>=min_price and answer[i]<=max_price:
-        df_price = df[df['Price Car'] ==answer[i]]
-        search_price=df_price['Name Car'].tolist()
-        search_color_ex=df_price['Color Exterior'].tolist()
-        search_color_in = df_price['Color Interior'].tolist()
-        search_model=df_price['Model Car'].tolist()
-        search_person=df_price['Person Car'].tolist()
-        print(f'''Name Car: {search_price[0]}   and     
-Model Car : {search_model[0]}   and              
-Color Exterior : {search_color_ex[0]}   and        ==> Price Car : {answer[i]}$
-Color Interior :{search_color_in[0]} and      
+list_answer = []
+for item in answer:
+    list_answer.append(item)
+
+print("Result : ")
+if list_answer[0]>=min_price and list_answer[0]<=max_price:
+    df_price = def_name[def_name['Price Car'] ==list_answer[0]]
+    search_price=def_name['Name Car'].tolist()
+    search_color_ex=def_name['Color Exterior'].tolist()
+    search_color_in = def_name['Color Interior'].tolist()
+    search_model=def_name['Model Car'].tolist()
+    search_person=def_name['Person Car'].tolist()
+    print(f'''Name Car: {search_price[0]}   and
+Model Car : {search_model[0]}   and
+Color Exterior : {search_color_ex[0]}   and        ==> Price Car : {list_answer[0]}$
+Color Interior :{search_color_in[0]} and
 Person Car : {search_person[0]}
  ''')
+else:
+        print(f'''We are sorry!!!!
+The car is not available at the price you want
+The car with the specifications you asked for is available at the price: {list_answer[0]}$''')
     else:
         print(f'''We are sorry!!!!
 The car is not available at the price you want
