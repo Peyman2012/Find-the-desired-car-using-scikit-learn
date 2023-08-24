@@ -15,9 +15,6 @@ Color_Interior=df['Color Interior']
 Person_Car=df['Person Car']
 Model_Car = ['Model Car']
 
-
-
-
 x=[]
 y=[]
 
@@ -25,8 +22,6 @@ y=[]
 for i in range(len(df)):
     x.append([Miles_Car[i],Year_Car[i],Accident_Car[i],Owner_Car[i]])
     y.append([Price_Car[i]])
-
-
 
 print("Please waite....")
 time.sleep(2)
